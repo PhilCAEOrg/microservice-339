@@ -1,4 +1,4 @@
-package i5.las2peer.services.test;
+package i5.las2peer.services.test2;
 
 
 import java.net.HttpURLConnection;
@@ -20,7 +20,7 @@ import i5.las2peer.api.ServiceException;
 import i5.las2peer.api.logging.MonitoringEvent;
 import i5.las2peer.restMapper.RESTService;
 import i5.las2peer.restMapper.annotations.ServicePath;
-import i5.las2peer.services.test.database.DatabaseManager;
+import i5.las2peer.services.test2.database.DatabaseManager;
 import java.sql.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -46,9 +46,9 @@ import java.util.Map;
  * outsourced to (imported) classes.
  *
  */
-@ServicePath("test")
+@ServicePath("test2")
 @ManualDeployment
-public class test extends RESTService {
+public class test2 extends RESTService {
 
 
   /*
@@ -62,7 +62,7 @@ public class test extends RESTService {
 
 
 
-  public test() {
+  public test2() {
 	super();
     // read and set properties values
     setFieldValues();
@@ -90,28 +90,28 @@ public class test extends RESTService {
   @Path("/")
   public static class RootResource {
 
-    private final test service = (test) Context.getCurrent().getService();
+    private final test2 service = (test2) Context.getCurrent().getService();
 
       /**
    * 
-   * test
+   * test2
    *
    * 
-   * @param test  a JSONObject
+   * @param test2  a JSONObject
    * 
    * @return Response 
    * 
    */
   @GET
-  @Path("/test")
+  @Path("/test2")
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.TEXT_PLAIN)
   @ApiResponses(value = {
-       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "test")
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "test2")
   })
-  @ApiOperation(value = "test", notes = " ")
-  public Response test(String test) {
-    JSONObject test_JSON = (JSONObject) JSONValue.parse(test);
+  @ApiOperation(value = "test2", notes = " ")
+  public Response test2(String test2) {
+    JSONObject test2_JSON = (JSONObject) JSONValue.parse(test2);
 
 
 
@@ -124,14 +124,14 @@ public class test extends RESTService {
 
 
 
-    // test
-    boolean test_condition = true;
-    if(test_condition) {
-      JSONObject test = new JSONObject();
+    // test2
+    boolean test2_condition = true;
+    if(test2_condition) {
+      JSONObject test2 = new JSONObject();
 
       
 
-      return Response.status(HttpURLConnection.HTTP_OK).entity(test.toJSONString()).build();
+      return Response.status(HttpURLConnection.HTTP_OK).entity(test2.toJSONString()).build();
     }
     return null;
   }
